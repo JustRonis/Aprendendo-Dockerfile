@@ -3,6 +3,8 @@
 FROM debian 
 
 RUN apt-get update && apt-get install -y apache2 && apt-get clean
+RUN chown www-data:www-data /var/lock && chown www-data /var/run && chwon www-data:www-data /var/log
+# o RUN acima esta dando permissao de dono para o usuario www-data para todo o diretorio www-data. Isto resolve o erro de permission denied neste caso especifico do apache
 
 ENV APACHE_LOCK_DIR="var/lock"
 ENV APACHE_PID_FILE="/var/run/apache2.pid"
