@@ -1,5 +1,3 @@
-#CORRIGINDO PROBLEMA DE NÃO INICIALIZAÇÃO AUTOMATICA DO APACHE, QUE ACONTECEU NA VERSAO 1_DF
-
 FROM debian 
 
 RUN apt-get update && apt-get install -y apache2 && apt-get clean
